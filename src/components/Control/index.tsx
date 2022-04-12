@@ -13,6 +13,7 @@ type UnitState = {
 type ControlProps = {
   base: string;
   units: Unit[];
+  readOnly: boolean;
   unit: UnitState;
   setUnits: React.Dispatch<React.SetStateAction<Unit[]>>;
   setUnit: React.Dispatch<React.SetStateAction<UnitState>>;
@@ -22,6 +23,7 @@ export default function Control({
   base,
   unit,
   units,
+  readOnly,
   setUnit,
   setUnits,
 }: ControlProps) {
@@ -62,17 +64,28 @@ export default function Control({
     setPrefixes(getPrefixes(unit.name));
   }, [unit]);
 
+  function maxLengthCheck(event: React.ChangeEvent<HTMLInputElement>) {
+    if (event.currentTarget.value.length > event.currentTarget.maxLength) {
+      return event.currentTarget.value.slice(0, event.currentTarget.maxLength);
+    }
+
+    return event.currentTarget.value;
+  }
+
   return (
     <div className="control-wrapper">
       <input
-        type="text"
-        pattern="\d*"
-        maxLength={10}
+        type="number"
         name="unit-value"
         className="unit-value"
         value={unit.value}
+        maxLength={12}
+        readOnly={readOnly}
         onChange={event =>
-          setUnit(prev => ({ ...prev, value: event.target.value }))
+          setUnit(prev => ({
+            ...prev,
+            value: maxLengthCheck(event),
+          }))
         }
       />
 

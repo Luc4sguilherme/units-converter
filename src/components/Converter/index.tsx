@@ -44,6 +44,7 @@ export default function Converter({ base }: ConverterProps) {
       <Control
         units={units}
         unit={unit1}
+        readOnly={false}
         base={base}
         setUnits={setUnits}
         setUnit={setUnit1}
@@ -52,6 +53,7 @@ export default function Converter({ base }: ConverterProps) {
       <Control
         units={units}
         unit={unit2}
+        readOnly
         base={base}
         setUnits={setUnits}
         setUnit={setUnit2}
