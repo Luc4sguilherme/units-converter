@@ -1,0 +1,11 @@
+.converter-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 650px) {
+  .converter-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}

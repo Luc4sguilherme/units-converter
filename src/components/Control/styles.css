@@ -1,0 +1,59 @@
+.unit-value {
+  background-color: #202124;
+  border: 1px solid #3c4043;
+  border-radius: 2px 2px 0 0;
+  color: #fff;
+  font-size: 180%;
+  height: 40px;
+  padding: 1px 6px;
+  text-align: center;
+  width: 100%;
+  outline: none;
+}
+
+span {
+  display: inline-block;
+  line-height: 44px;
+  width: 27px;
+  text-align: center;
+  font-size: 26px;
+  color: #787878;
+  margin: 0 15px;
+  padding-top: 10px;
+  vertical-align: top;
+}
+
+.prefix,
+.unit-name {
+  background-position-x: 95%;
+  border-radius: 0 0 2px 2px;
+  color: #bdc1c6;
+  width: 100%;
+  margin-top: -1px;
+  background: #303134;
+  border: 1px solid #3c4043;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 5px 16px 5px 5px;
+  vertical-align: middle;
+}
+
+.control-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.unit-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media only screen and (max-width: 650px) {
+  span {
+    padding: 0;
+  }
+}
